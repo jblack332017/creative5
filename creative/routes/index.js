@@ -6,7 +6,7 @@ mongoose.connect('mongodb://localhost/commentDB');
 
 var reviewSchema = mongoose.Schema({ //Defines the Schema for this database
 Name: String,
-review: String
+Review: String
 });
 var Review = mongoose.model('Review', reviewSchema); 
 
@@ -32,11 +32,11 @@ console.log(req.body); //[2]
 
 var newreview = new Review(req.body); //[3]
 console.log(newreview); //[3]
-// newreview.save(function(err, post) { //[4]
-//   if (err) return console.error(err);
-//   console.log(post);
+newreview.save(function(err, post) { //[4]
+   if (err) return console.error(err);
+   console.log(post);
 res.sendStatus(200);
-// });
+ });
 
 });
 
