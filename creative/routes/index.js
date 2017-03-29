@@ -33,7 +33,7 @@ router.post('/addComment', function(req, res, next) {
   var newreview = new Review(req.body); //[3]
 	console.log(newreview); //[3]
 	newreview.save(function(err, post) { //[4]
-  if (err) return console.error(err);
+  if (err) return res.send();
   console.log(post);
   res.sendStatus(200);
 });
