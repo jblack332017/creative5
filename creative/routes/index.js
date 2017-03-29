@@ -6,7 +6,8 @@ mongoose.connect('mongodb://localhost/commentDB');
 
 var reviewSchema = mongoose.Schema({ //Defines the Schema for this database
 Name: String,
-Review: String
+Review: String,
+Movie: String
 });
 var Review = mongoose.model('Review', reviewSchema); 
 
