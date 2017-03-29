@@ -35,7 +35,7 @@ console.log(newreview); //[3]
 // newreview.save(function(err, post) { //[4]
 //   if (err) return console.error(err);
 //   console.log(post);
-//   res.sendStatus(200);
+res.sendStatus(200);
 // });
 
 });
