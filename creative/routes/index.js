@@ -27,16 +27,18 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/addComment', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-  console.log("POST comment route"); //[1]
-  console.log(req.body); //[2]
-  var newreview = new Review(req.body); //[3]
-	console.log(newreview); //[3]
-	newreview.save(function(err, post) { //[4]
-  if (err) return res.send();
-  console.log(post);
-  res.sendStatus(200);
+console.log("POST comment route"); //[1]
+console.log(req.body); //[2]
+
+var newreview = new Review(req.body); //[3]
+console.log(newreview); //[3]
+// newreview.save(function(err, post) { //[4]
+//   if (err) return console.error(err);
+//   console.log(post);
+//   res.sendStatus(200);
+// });
+
 });
-});
+
 
 module.exports = router;
