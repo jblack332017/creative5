@@ -49,7 +49,7 @@ router.get('/reviews', function(req, res) {
     } else if (result.length) {
       console.log("Query Worked");
       console.log(result);
-      res.send(result);
+      res.json(result);
     } else {
       console.log("No Documents found");
     }
