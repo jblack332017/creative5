@@ -63,6 +63,13 @@ $(document).ready(function(){
      function getReviews(){
 	    $.getJSON('../reviews/'+"Hot Rod", function(data) {
 	      console.log(data);
+	      everything = "";
+	      for (review in data)
+	      {
+	      	name = data[review]['name'];
+	      	reviewText = data[review]['review'];
+	      	console.log(name+reviewText);
+	      }
 	    })
 	    $.getJSON('../reviews/'+"Beauty and the Beast", function(data) {
 	      console.log(data);
