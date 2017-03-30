@@ -3,7 +3,12 @@ $(document).ready(function(){
       $.getJSON('../reviews', function(data) {
       console.log(data);
       var everything = "<ul>";
-      console.log(data[1]);
+      for(var comment in data) {
+      	console.log(comment);
+        com = data[comment];
+        console.log(com);
+        everything += "<li> Name: " + com.Name + " -- Comment: " + com.Review + "</li>";
+      }
       everything += "</ul>";
       $("#comments").html(everything);
     })
