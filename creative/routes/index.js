@@ -15,7 +15,7 @@ var reviewSchema = mongoose.Schema({
 });
 
 var Review = mongoose.model('Review', reviewSchema);
-var silence = new Kitten({ name: 'Silence' });
+var silence = new Review({ name: 'Silence' });
 console.log(silence.name); // 'Silence'
 
 /* GET home page. */
