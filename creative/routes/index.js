@@ -8,7 +8,8 @@ mongoose.connect('mongodb://localhost/reviews'); //Connects to a mongo database 
 
 var commentSchema = mongoose.Schema({ //Defines the Schema for this database
 Name: String,
-Comment: String
+Comment: String,
+Movie: String
 });
 
 var Review = mongoose.model('Review', commentSchema); //Makes an object from that schema as a model
