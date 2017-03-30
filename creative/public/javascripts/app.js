@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-      var myobj = {Name:Josh,Comment:$Test};
+      var myobj = {Name:"Josh",Comment:"Test"};
       jobj = JSON.stringify(myobj);
 
       var url = "addComment";
