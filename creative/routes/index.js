@@ -32,7 +32,7 @@ router.get('/', function(req, res, next) {
 router.post('/reviews', function(req,res,nex) {
 	console.log(req.body.name);
 	var rev = new Review(req.body);
-	console.log(rev.review);
+	console.log(rev);
 	res.sendStatus(200);
 });
 
