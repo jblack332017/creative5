@@ -13,7 +13,8 @@ db.once('open', function() {
 
 var reviewSchema = mongoose.Schema({
     name: String,
-    review: String
+    review: String,
+    movie: String
 });
 
 var Review = mongoose.model('Review', reviewSchema);
@@ -26,6 +27,13 @@ console.log(silence.review); // 'Silence'
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
+});
+
+router.post('/reviews', function(req,res,nex) {
+	console.log(req.body);
+	var rev = new Review(req.body);
+	console.log(rev.review);
+	res.sendStatus(200);
 });
 
 
