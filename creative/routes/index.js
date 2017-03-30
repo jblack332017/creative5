@@ -33,7 +33,11 @@ router.post('/reviews', function(req,res,nex) {
 	console.log(req.body.name);
 	var rev = new Review(req.body);
 	console.log(rev);
-	res.sendStatus(200);
+	rev.save(function (err, fluffy) {
+  if (err) return console.error(err);
+  res.sendStatus(200);
+});
+	
 });
 
 
