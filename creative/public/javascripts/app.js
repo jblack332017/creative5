@@ -98,7 +98,7 @@ $(document).ready(function(){
 	      }
 	      $("#nachoReview").html(everything);
 	    })
-	    $.getJSON('../reviews/'+"Sandlot", function(data) {
+	    $.getJSON('../reviews/'+"The Sandlot", function(data) {
 	      console.log(data);
 	      everything = "";
 	      for (review in data)
