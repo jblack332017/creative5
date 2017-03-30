@@ -76,18 +76,63 @@ $(document).ready(function(){
 	    })
 	    $.getJSON('../reviews/'+"Beauty and the Beast", function(data) {
 	      console.log(data);
+	      everything = "";
+	      for (review in data)
+	      {
+	      	name = data[review]['name'];
+	      	reviewText = data[review]['review'];
+	      	console.log(name+reviewText);
+	      	everything += "<div class='reviewEntry' id='reviewEntry'><p>"+name+"</p><p>"+reviewText+"</p></div>";
+	      }
+	      $("#beautyReview").html(everything);
 	    })
 	    $.getJSON('../reviews/'+"Nacho Libre", function(data) {
 	      console.log(data);
+	      everything = "";
+	      for (review in data)
+	      {
+	      	name = data[review]['name'];
+	      	reviewText = data[review]['review'];
+	      	console.log(name+reviewText);
+	      	everything += "<div class='reviewEntry' id='reviewEntry'><p>"+name+"</p><p>"+reviewText+"</p></div>";
+	      }
+	      $("#nachoReview").html(everything);
 	    })
 	    $.getJSON('../reviews/'+"Sandlot", function(data) {
 	      console.log(data);
+	      everything = "";
+	      for (review in data)
+	      {
+	      	name = data[review]['name'];
+	      	reviewText = data[review]['review'];
+	      	console.log(name+reviewText);
+	      	everything += "<div class='reviewEntry' id='reviewEntry'><p>"+name+"</p><p>"+reviewText+"</p></div>";
+	      }
+	      $("#sandReview").html(everything);
 	    })
 	    $.getJSON('../reviews/'+"Hackers", function(data) {
 	      console.log(data);
+	      everything = "";
+	      for (review in data)
+	      {
+	      	name = data[review]['name'];
+	      	reviewText = data[review]['review'];
+	      	console.log(name+reviewText);
+	      	everything += "<div class='reviewEntry' id='reviewEntry'><p>"+name+"</p><p>"+reviewText+"</p></div>";
+	      }
+	      $("#hotRodReview").html(everything);
 	    })
 	    $.getJSON('../reviews/'+"Finding Nemo", function(data) {
 	      console.log(data);
+	      everything = "";
+	      for (review in data)
+	      {
+	      	name = data[review]['name'];
+	      	reviewText = data[review]['review'];
+	      	console.log(name+reviewText);
+	      	everything += "<div class='reviewEntry' id='reviewEntry'><p>"+name+"</p><p>"+reviewText+"</p></div>";
+	      }
+	      $("#findingReview").html(everything);
 	    })
 
      }
