@@ -14,6 +14,7 @@ $(document).ready(function(){
 	    $("#done").html(textStatus);
 	}
 	})
+	$("#reviewContainer").css("display", "none");
 	  });
 
      $("#cancelReview").click(function(){
@@ -26,6 +27,7 @@ $(document).ready(function(){
      $("#hotRod").click(function(){
      	$("#reviewContainer").css("display", "block");
      	$("#movie").text("Hot Rod");
+
 
      });
      $("#beauty").click(function(){
