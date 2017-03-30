@@ -3,7 +3,7 @@ $(document).ready(function(){
       var myobj = {Name:Josh,Comment:$Test};
       jobj = JSON.stringify(myobj);
 
-      var url = "../addComment";
+      var url = "addComment";
 $.ajax({
 url:url,
 type: "POST",
