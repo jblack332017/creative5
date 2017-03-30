@@ -6,7 +6,7 @@ $(document).ready(function(){
       for(var comment in data) {
       	console.log(comment);
         com = data[comment];
-        console.log(com.Name);
+        console.log(com);
         everything += "<li> Name: " + com.Name + " -- Comment: " + com.Review + "</li>";
       }
       everything += "</ul>";
