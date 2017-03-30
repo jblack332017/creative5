@@ -61,7 +61,22 @@ $(document).ready(function(){
 
 
      function getReviews(){
-	    $.getJSON('../reviews', function(data) {
+	    $.getJSON('../reviews/'+"Hot Rod", function(data) {
+	      console.log(data);
+	    })
+	    $.getJSON('../reviews/'+"Beauty and the Beast", function(data) {
+	      console.log(data);
+	    })
+	    $.getJSON('../reviews/'+"Nacho Libre", function(data) {
+	      console.log(data);
+	    })
+	    $.getJSON('../reviews/'+"Sandlot", function(data) {
+	      console.log(data);
+	    })
+	    $.getJSON('../reviews/'+"Hackers", function(data) {
+	      console.log(data);
+	    })
+	    $.getJSON('../reviews/'+"Finding Nemo", function(data) {
 	      console.log(data);
 	    })
 
