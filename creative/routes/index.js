@@ -43,7 +43,7 @@ router.post('/reviews', function(req, res) {
 
 router.get('/reviews', function(req, res) {
   console.log("In Pokemon");
-  collection.find().toArray(function(err, result) {
+  collection.find(function(err, result) {
     if(err) {
       console.log(err);
     } else if (result.length) {
