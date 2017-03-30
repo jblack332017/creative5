@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
      $("#postReview").click(function(){
-      var myobj = {name:$("#name").val(),review:$("#review").val(),movie:$("#movie").val()};
+      var myobj = {name:$("#name").val(),review:$("#review").val(),movie:$("#movie").text()};
       jobj = JSON.stringify(myobj);
       $("#json").text(jobj);
 	var url = "../reviews";
