@@ -120,7 +120,7 @@ $(document).ready(function(){
 	      	console.log(name+reviewText);
 	      	everything += "<div class='reviewEntry' id='reviewEntry'><p>"+name+"</p><p>"+reviewText+"</p></div>";
 	      }
-	      $("#hotRodReview").html(everything);
+	      $("#hackersReview").html(everything);
 	    })
 	    $.getJSON('../reviews/'+"Finding Nemo", function(data) {
 	      console.log(data);
