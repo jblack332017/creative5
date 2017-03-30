@@ -1,17 +1,20 @@
 $(document).ready(function(){
 
-      var myobj = {name:"#name",review:"#comment"};
+     $("#postReview").click(function(){
+      var myobj = {name:$("#name").val(),review:$("#review").val(),movie:$("#movie").val()};
       jobj = JSON.stringify(myobj);
       $("#json").text(jobj);
-	var url = "../reviews";
+	var url = "../comment";
 $.ajax({
 url:url,
 type: "POST",
 data: jobj,
 contentType: "application/json; charset=utf-8",
 success: function(data,textStatus) {
+    $("#done").html(textStatus);
 }
 })
+  });
 
 
 	});
