@@ -69,7 +69,9 @@ $(document).ready(function(){
 	      	name = data[review]['name'];
 	      	reviewText = data[review]['review'];
 	      	console.log(name+reviewText);
+	      	everything += "<div id='reviewEntry'><p>"+name+"</p><p>"+reviewText+"</p></div>";
 	      }
+	      $("#hotRodReview").html(everything);
 	    })
 	    $.getJSON('../reviews/'+"Beauty and the Beast", function(data) {
 	      console.log(data);
