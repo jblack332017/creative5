@@ -11,6 +11,8 @@ $(document).ready(function(){
         {
         	console.log(item);
         }
+        jobj = JSON.stringify(myobj);
+        console.log(jobj);
         everything += "<li> Name: " + com.Name + " -- Comment: " + com.Review + "</li>";
       }
       everything += "</ul>";
