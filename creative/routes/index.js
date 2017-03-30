@@ -43,17 +43,15 @@ router.post('/reviews', function(req, res) {
 
 router.get('/reviews', function(req, res) {
   console.log("In Pokemon");
-  collection.find().toArray(function(err, result) {
-    if(err) {
-      console.log(err);
-    } else if (result.length) {
-      console.log("Query Worked");
-      console.log(result);
-      res.json(result);
-    } else {
-      console.log("No Documents found");
-    }
-  });
+  collection.find(function(err,commentList) { //Calls the find() method on your database
+  if (err) return console.error(err); //If there's an error, print it out
+  else {
+    console.log(commentList); //Otherwise console log the comments you found
+	res.json(commentList); //Then send the comments
+    
+    
+  }
+})
 });
 
 
