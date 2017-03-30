@@ -31,6 +31,8 @@ router.get('/', function(req, res, next) {
 
 router.post('/addComment', function(req, res, next) {
 var newcomment = new Review(req.body); //[3]
+console.log(req.body);
+
 console.log(newcomment); //[3]
 newcomment.save(function(err, post) { //[4]
   if (err) return console.error(err);
