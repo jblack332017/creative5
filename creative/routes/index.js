@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/commentDB');
+mongoose.connect('mongodb://localhost/reviewDB');
 
 var reviewSchema = mongoose.Schema({ //Defines the Schema for this database
 Name: String,
