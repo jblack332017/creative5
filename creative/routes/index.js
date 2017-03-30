@@ -32,7 +32,7 @@ console.log("POST comment route"); //[1]
 console.log(req.body); //[2]
 
 var newreview = new Review(req.body); //[3]
-console.log(newreview); //[3]
+console.log("here"+newreview); //[3]
 newreview.save(function(err, post) { //[4]
    if (err) return console.error(err);
    console.log(post);
