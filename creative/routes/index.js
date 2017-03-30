@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.post('/addComment', function(req, res, next) {
+router.post('/reviews', function(req, res, next) {
 var newcomment = new Review(req.body); //[3]
 console.log(req.body);
 
