@@ -4,7 +4,7 @@ $(document).ready(function(){
       var myobj = {name:$("#name").val(),review:$("#review").val(),movie:$("#movie").val()};
       jobj = JSON.stringify(myobj);
       $("#json").text(jobj);
-	var url = "../comment";
+	var url = "../reviews";
 $.ajax({
 url:url,
 type: "POST",
