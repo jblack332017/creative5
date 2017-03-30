@@ -17,6 +17,7 @@ $(document).ready(function(){
 	}
 	})
 	$("#reviewContainer").css("display", "none");
+		getReviews();
 	  });
 
      $("#cancelReview").click(function(){
