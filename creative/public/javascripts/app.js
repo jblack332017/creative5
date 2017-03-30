@@ -56,4 +56,12 @@ $(document).ready(function(){
 
      });
 
+
+     function getReviews(){
+	    $.getJSON('../reviews', function(data) {
+	      console.log(data);
+	    })
+
+     }
+
 });
