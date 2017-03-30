@@ -1,25 +1,23 @@
 var express = require('express');
 var router = express.Router();
 
-/* Set up mongoose in order to connect to mongo database */
-var mongoose = require('mongoose'); //Adds mongoose as a usable dependency
-
-mongoose.connect('mongodb://localhost/reviewDB'); //Connects to a mongo database called "commentDB"
-
-var commentSchema = mongoose.Schema({ //Defines the Schema for this database
-Name: String,
-Comment: String,
-Movie: String
+var mongodb = require('mongodb');
+var MongoClient = mongodb.MongoClient;
+var dbUrl = 'mongodb://localhost:27017/reviews';
+var collection
+// Use connect method to connect to the Server
+MongoClient.connect(dbUrl, function (err, db) {
+  if (err) {
+    console.log('Unable to connect to the mongoDB server. Error:', err);
+  } else {
+    // HURRAY!! We are connected. :)
+    console.log('Connection established to', dbUrl);
+    collection = db.collection('review');
+    /**
+     * TODO: insert data here, once we've successfully connected
+     */
+  }
 });
-
-var Review = mongoose.model('Review', commentSchema); //Makes an object from that schema as a model
-
-var db = mongoose.connection; //Saves the connection as a variable to use
-db.on('error', console.error.bind(console, 'connection error:')); //Checks for connection errors
-db.once('open', function() { //Lets us know when we're connected
-console.log('Connected');
-});
-
 
 
 
@@ -29,32 +27,37 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.post('/addComment', function(req, res, next) {
-var newcomment = new Review(req.body); //[3]
-console.log(req.body);
-
-console.log(newcomment); //[3]
-newcomment.save(function(err, post) { //[4]
-  if (err) return console.error(err);
-  console.log(post);
-  res.sendStatus(200);
+router.post('/reviews', function(req, res) {
+    console.log("In review Post");
+    console.log(req.body);
+    collection.insert(req.body, function (err, result) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('Inserted %d documents into the "review" collection. The documents inserted with "_id" are:', result.length, result);
+        res.end('{"success" : "Updated Successfully", "status" : 200}');
+      }
+    });
 });
+
+
+router.get('/reviews', function(req, res) {
+  console.log("In Pokemon");
+  collection.find().toArray(function(err, result) {
+    if(err) {
+      console.log(err);
+    } else if (result.length) {
+      console.log("Query Worked");
+      console.log(result);
+      res.send(result);
+    } else {
+      console.log("No Documents found");
+    }
+  });
 });
 
 
-/* GET comments from database */
-router.get('/reviews', function(req, res, next) {
-console.log("In the GET route?");
-Review.find(function(err,commentList) { //Calls the find() method on your database
-  if (err) return console.error(err); //If there's an error, print it out
-  else {
-    console.log(commentList); //Otherwise console log the comments you found
-	res.json(commentList); //Then send the comments
-    
-    
-  }
-})
-});
+
 
 
 module.exports = router;
