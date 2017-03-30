@@ -58,7 +58,7 @@ Review.find(function(err,commentList) { //Calls the find() method on your databa
 router.get('/reviews/:movie', function(req, res, next) {
 console.log("In the GET route?");
 console.log(req.params.movie);
-Review.find({ 'movie': req.movie }, function(err,commentList) { //Calls the find() method on your database
+Review.find({ 'movie': req.params.movie }, function(err,commentList) { //Calls the find() method on your database
   if (err) return console.error(err); //If there's an error, print it out
   else {
     console.log(commentList); //Otherwise console log the comments you found
