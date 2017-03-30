@@ -31,7 +31,8 @@ router.get('/', function(req, res, next) {
 
 router.post('/reviews', function(req,res,nex) {
 	console.log(req.body);
-	var rev = new Review(req.body);
+	result = JSON.parse(req.body);
+	var rev = new Review(result);
 	console.log(rev.review);
 	res.sendStatus(200);
 });
