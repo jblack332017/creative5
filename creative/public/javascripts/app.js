@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	getReviews();
+
      $("#postReview").click(function(){
       var myobj = {name:$("#name").val(),review:$("#review").val(),movie:$("#movie").text()};
       jobj = JSON.stringify(myobj);
@@ -19,6 +21,7 @@ $(document).ready(function(){
 
      $("#cancelReview").click(function(){
      	$("#reviewContainer").css("display", "none");
+     	getReviews();
 
      });
 
