@@ -4,7 +4,7 @@ $(document).ready(function(){
       console.log(data);
       var everything = "<ul>";
       for(var comment1 in data) {
-      	for (var comment in comment1) {}
+      	for (var comment in comment1) {
         com = data[comment];
         everything += "<li> Name: " + com.Name + " -- Comment: " + com.Review + "</li>";
       }
