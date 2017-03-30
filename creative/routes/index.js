@@ -42,4 +42,19 @@ res.sendStatus(200);
 });
 
 
+/* GET comments from database */
+router.get('/reviews', function(req, res, next) {
+console.log("In the GET route?");
+Review.find(function(err,commentList) { //Calls the find() method on your database
+  if (err) return console.error(err); //If there's an error, print it out
+  else {
+    console.log(commentList); //Otherwise console log the comments you found
+	res.json(commentList); //Then send the comments
+    
+    
+  }
+})
+});
+
+
 module.exports = router;
